@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context=".DashboardActivity">
+
+
+    <TextView
+        android:text="Welcome "
+        android:layout_marginTop="10dp"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:background="#FF0000"
+            android:id="@+id/aboutLayout"
+            >
+            <ImageView
+                android:id="@+id/aboutImageView"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:padding="25dp"
+                />
+            <TextView
+                android:id="@+id/travelEventTextView"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Travel Event"
+                android:layout_margin="5dp"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:background="#CC00CC"
+            android:id="@+id/contactLayout"
+            >
+            <ImageView
+                android:id="@+id/contactImageView"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+
+                android:layout_gravity="center"
+                android:padding="25dp"
+                />
+            <TextView
+                android:id="@+id/expenceTextView"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Expence Tracker"
+                android:layout_margin="5dp"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:background="#2AFF00"
+            android:id="@+id/signInLayout"
+            >
+            <ImageView
+                android:id="@+id/signInImageView"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+
+                android:layout_gravity="center"
+                android:padding="25dp"
+                />
+            <TextView
+                android:id="@+id/nearByPlacesTextView"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Nearby Places"
+                android:layout_margin="5dp"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:background="#FF7F00"
+            android:id="@+id/shopLayout"
+            >
+            <ImageView
+                android:id="@+id/shopImageView"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+
+                android:layout_gravity="center"
+                android:padding="25dp"
+                />
+            <TextView
+                android:id="@+id/weatherTextView"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Weather"
+                android:layout_margin="5dp"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:background="#FF0055"
+            android:id="@+id/privacyLayout"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+
+                android:layout_gravity="center"
+                android:padding="25dp"
+                android:id="@+id/privacyImageView"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Memories"
+                android:layout_margin="5dp"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:id="@+id/memoriesTextView"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:background="#00FFFF"
+            android:id="@+id/settingsLayout"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:padding="25dp"
+                android:id="@+id/settingsImageView"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Profile"
+                android:layout_margin="5dp"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:id="@+id/profileTextView"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout> </ScrollView>
