@@ -1,7 +1,7 @@
 package com.example.shamsuddha.tourmate;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
 public class WeatherActivity extends AppCompatActivity {
 

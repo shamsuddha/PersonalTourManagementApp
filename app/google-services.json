@@ -1,35 +1,27 @@
 {
   "project_info": {
-    "project_number": "760709127431",
-    "firebase_url": "https://tourmate-5de50.firebaseio.com",
-    "project_id": "tourmate-5de50",
-    "storage_bucket": "tourmate-5de50.appspot.com"
+    "project_number": "491676571021",
+    "firebase_url": "https://tourmatepresentation.firebaseio.com",
+    "project_id": "tourmatepresentation",
+    "storage_bucket": "tourmatepresentation.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:760709127431:android:7e488e46d51f9035",
+        "mobilesdk_app_id": "1:491676571021:android:7e488e46d51f9035",
         "android_client_info": {
           "package_name": "com.example.shamsuddha.tourmate"
         }
       },
       "oauth_client": [
         {
-          "client_id": "760709127431-eg9hrav6c412pe7fmcitlv3q6fb3p7fd.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.shamsuddha.tourmate",
-            "certificate_hash": "00f5276357c45cec3e8e04323eb78e5c6b498def"
-          }
-        },
-        {
-          "client_id": "760709127431-6992dqe8jdh3j4dcq58t3ba66sdnkdh0.apps.googleusercontent.com",
+          "client_id": "491676571021-4bi9ufuk1epu4rtlelm60cga7mqo2aco.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB9e2sUdEPpqu843It_czts1KNf4SGThBM"
+          "current_key": "AIzaSyD0HksnqiIoUome2jhnp7zUOM5-nAsIwaA"
         }
       ],
       "services": {
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "760709127431-6992dqe8jdh3j4dcq58t3ba66sdnkdh0.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2
