@@ -18,7 +18,11 @@
         </activity>
         <activity android:name=".DashboardActivity" />
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".WeatherActivity"></activity>
+        <activity android:name=".WeatherActivity" />
+        <activity android:name=".TravelEventActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".TravelExpenceActivity" />
+        <activity android:name=".TravelMoments"></activity>
     </application>
 
 </manifest>
