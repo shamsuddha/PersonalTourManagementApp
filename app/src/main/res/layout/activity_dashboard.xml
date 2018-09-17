@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:orientation="horizontal"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             >
             <LinearLayout
                 android:layout_width="0dp"
@@ -34,7 +34,7 @@
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_margin="4dp"
-                android:background="#FF0000"
+                android:background="#0080FF"
                 >
                 <LinearLayout
                     android:orientation="horizontal"
@@ -45,14 +45,15 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/avatar"
+                        android:src="@drawable/travel_event"
                         />
                     <TextView
                         android:padding="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="00"
+                        android:text="000"
                         android:textSize="40sp"
+                        android:textColor="#f0f0f0"
                         >
                     </TextView>
                 </LinearLayout>
@@ -64,6 +65,7 @@
                     android:textSize="25sp"
                     android:gravity="center"
                     android:textStyle="bold"
+                    android:textColor="#f0f0f0"
                     />
             </LinearLayout>
             <LinearLayout
@@ -72,7 +74,7 @@
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_margin="4dp"
-                android:background="#FF0000"
+                android:background="#FF8200"
                 >
                 <LinearLayout
                     android:orientation="horizontal"
@@ -83,7 +85,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/avatar"
+                        android:src="@drawable/expence"
                         />
                     <TextView
                         android:padding="10dp"
@@ -91,17 +93,19 @@
                         android:layout_height="wrap_content"
                         android:text="00"
                         android:textSize="40sp"
+                        android:textColor="#f0f0f0"
                         >
                     </TextView>
                 </LinearLayout>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:text="Total Expence"
+                    android:text="Total Expense"
                     android:layout_margin="5dp"
                     android:textSize="25sp"
                     android:gravity="center"
                     android:textStyle="bold"
+                    android:textColor="#f0f0f0"
                     />
             </LinearLayout>
         </LinearLayout>
