@@ -24,7 +24,8 @@
         <activity android:name=".ViewTravelEventActivity" />
         <activity android:name=".AddTravelEventActivity" />
         <activity android:name=".AddTravelExpenseActivity" />
-        <activity android:name=".EditProfileActivity"></activity>
+        <activity android:name=".EditProfileActivity" />
+        <activity android:name=".TravelEeventDetaisActivity"></activity>
     </application>
 
 </manifest>
