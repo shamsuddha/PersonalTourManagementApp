@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.EditText;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,38 +16,100 @@ import com.google.firebase.database.DatabaseReference;
 
 public class DashboardActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
-
     private DatabaseReference databaseReference;
-    TextView travelEventTextView, expenceTextView, nearByPlacesTextView, weatherTextView, memoriesTextView, profileTextView;
-
+    TextView addTravelEventTextView, myTravelEventsTextView, myProfileTextView, weatherTextView, nearByPlacesTextView, myMemoriesTextView;
+    ImageView mAddTravelEventImageView, myTravelEventsImageView, myProfileImageView, weatherImageView, nearByPlacesImageView,
+            myMemoriesImageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-
         firebaseAuth = FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser() == null){
             finish();
             Intent i = new Intent(DashboardActivity.this, MainActivity.class);
             startActivity(i);
         }
-
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
+        mAddTravelEventImageView = findViewById(R.id.addTravelEventImageView);
+        myTravelEventsImageView = findViewById(R.id.myTravelEventsImageView);
+        myProfileImageView = findViewById(R.id.myProfileImageView);
+        weatherImageView = findViewById(R.id.weatherImageView);
+        nearByPlacesImageView = findViewById(R.id.nearByPlacesImageView);
+        myMemoriesImageView = findViewById(R.id.myMemoriesImageView);
+        myTravelEventsTextView = findViewById(R.id.myTravelEventsTextView);
+
+        addTravelEventTextView = findViewById(R.id.addTravelEventTextView);
+
+        addTravelEventTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent aas = new Intent(DashboardActivity.this, AddTravelEventActivity.class);
+                startActivity(aas);
+            }
+        });
 
 
-        travelEventTextView = findViewById(R.id.travelEventTextView);
-        expenceTextView = findViewById(R.id.expenceTextView);
-        nearByPlacesTextView = findViewById(R.id.nearByPlacesTextView);
-        weatherTextView = findViewById(R.id.weatherTextView);
-        memoriesTextView = findViewById(R.id.memoriesTextView);
-        profileTextView = findViewById(R.id.profileTextView);
+        mAddTravelEventImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent aa = new Intent(DashboardActivity.this, AddTravelEventActivity.class);
+                startActivity(aa);
+            }
+        });
 
 
+        myTravelEventsImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent travelEvent = new Intent(DashboardActivity.this, ViewTravelEventActivity.class);
+                startActivity(travelEvent);
+            }
+        });
+
+        myProfileImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent travelEvent = new Intent(DashboardActivity.this, ProfileActivity.class);
+                startActivity(travelEvent);
+            }
+        });
 
 
+        weatherImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent travelEvent = new Intent(DashboardActivity.this, WeatherActivity.class);
+                startActivity(travelEvent);
+            }
+        });
 
 
+        nearByPlacesImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+
+        myMemoriesImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent travelEvent = new Intent(DashboardActivity.this, TravelMomentsActivity.class);
+                startActivity(travelEvent);
+            }
+        });
+
+
+        myTravelEventsTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent travelEvent = new Intent(DashboardActivity.this, ViewTravelEventActivity.class);
+                startActivity(travelEvent);
+            }
+        });
     }
 
 
@@ -56,7 +118,7 @@ public class DashboardActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu,menu);
+        getMenuInflater().inflate(R.menu.menu_after_login,menu);
         return super.onCreateOptionsMenu(menu);
     }
     @Override
@@ -88,11 +150,5 @@ public class DashboardActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     //------------------ Menu Section End --------------------------------
-
-
-
-
-
-
 
 }

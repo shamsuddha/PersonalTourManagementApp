@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "491676571021",
-    "firebase_url": "https://tourmatepresentation.firebaseio.com",
-    "project_id": "tourmatepresentation",
-    "storage_bucket": "tourmatepresentation.appspot.com"
+    "project_number": "720702979788",
+    "firebase_url": "https://tourmatepresentation-47e0a.firebaseio.com",
+    "project_id": "tourmatepresentation-47e0a",
+    "storage_bucket": "tourmatepresentation-47e0a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:491676571021:android:7e488e46d51f9035",
+        "mobilesdk_app_id": "1:720702979788:android:7e488e46d51f9035",
         "android_client_info": {
           "package_name": "com.example.shamsuddha.tourmate"
         }
       },
       "oauth_client": [
         {
-          "client_id": "491676571021-4bi9ufuk1epu4rtlelm60cga7mqo2aco.apps.googleusercontent.com",
+          "client_id": "720702979788-ca190920ne94ksbco3irdhpa9302b73a.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD0HksnqiIoUome2jhnp7zUOM5-nAsIwaA"
+          "current_key": "AIzaSyBY2uGY9IpPuTPd1rRNqlj6mPKssIdUW-4"
         }
       ],
       "services": {

@@ -19,10 +19,12 @@
         <activity android:name=".DashboardActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".WeatherActivity" />
-        <activity android:name=".TravelEventActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".TravelExpenceActivity" />
-        <activity android:name=".TravelMoments"></activity>
+        <activity android:name=".TravelMomentsActivity" />
+        <activity android:name=".ViewTravelEventActivity" />
+        <activity android:name=".AddTravelEventActivity" />
+        <activity android:name=".AddTravelExpenseActivity" />
+        <activity android:name=".EditProfileActivity"></activity>
     </application>
 
 </manifest>

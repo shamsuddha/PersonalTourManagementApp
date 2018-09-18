@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
 
     EditText mUserNameEditText, mPasswordEditText;
-    Button mLoginButton;
+    Button mLoginButton, mRegisterButton;
     TextView mSignUpTextView;
     FirebaseAuth firebaseAuth;
 
@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
         mUserNameEditText = findViewById(R.id.userNameEditText);
         mPasswordEditText = findViewById(R.id.passwordEditText);
         mLoginButton = findViewById(R.id.loginButton);
-        mSignUpTextView = findViewById(R.id.signUpTextView);
 
+        mRegisterButton = findViewById(R.id.registerButton);
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,17 +54,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mSignUpTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
+
+
+        mRegisterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, SignUpActivity.class);
                 startActivity(i);
             }
         });
-
-
-
 
 
     }
@@ -104,6 +103,9 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(i);
 
                         }
+                        else {
+                            Toast.makeText(MainActivity.this, "Please enter correct email and password", Toast.LENGTH_LONG).show();
+                        }
 
                     }
                 });
@@ -123,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu,menu);
+        getMenuInflater().inflate(R.menu.menu_before_login,menu);
         return super.onCreateOptionsMenu(menu);
     }
     @Override

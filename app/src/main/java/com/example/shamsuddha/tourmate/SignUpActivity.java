@@ -20,10 +20,9 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    EditText mEmployeeEmail, mEmployeePassword;
-    Button registerEmployeeButton;
+    EditText userNameEditText, userEmailAddressEditText, userPasswordEditText;
+    Button signUpButton, loginButton;
     FirebaseAuth firebaseAuth;
-    TextView textViewSignIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,21 +39,19 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
 
-        mEmployeeEmail = findViewById(R.id.employeeEmail);
-        mEmployeePassword = findViewById(R.id.employeePassword);
-        textViewSignIn = findViewById(R.id.textViewSignin);
+        userEmailAddressEditText = findViewById(R.id.userEmailAddressEditText);
+        userPasswordEditText = findViewById(R.id.userPasswordEditText);
+        loginButton = findViewById(R.id.loginButton);
+        signUpButton = findViewById(R.id.signUpButton);
 
-
-        registerEmployeeButton = findViewById(R.id.registerEmployeeButton);
-
-        registerEmployeeButton.setOnClickListener(new View.OnClickListener() {
+        signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 registerUser();
             }
         });
 
-        textViewSignIn.setOnClickListener(new View.OnClickListener() {
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(SignUpActivity.this,MainActivity.class);
@@ -67,8 +64,8 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void registerUser() {
 
-        String email = mEmployeeEmail.getText().toString();
-        String password = mEmployeePassword.getText().toString();
+        String email = userEmailAddressEditText.getText().toString();
+        String password = userPasswordEditText.getText().toString();
 
         if (TextUtils.isEmpty(email)){
             Toast.makeText(this,"Please enter an email address", Toast.LENGTH_LONG).show();
@@ -110,7 +107,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu,menu);
+        getMenuInflater().inflate(R.menu.menu_before_login,menu);
         return super.onCreateOptionsMenu(menu);
     }
     @Override

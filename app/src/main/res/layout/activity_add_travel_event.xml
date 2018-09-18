@@ -3,51 +3,25 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:gravity="center"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:paddingTop="5dp"
-    android:paddingBottom="5dp"
-    tools:context=".MainActivity">
+    tools:context=".AddTravelEventActivity">
     <ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="#EBEBEB"
         android:fitsSystemWindows="true">
         <LinearLayout
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <ImageView
-                android:foregroundGravity="center"
-                android:layout_width="170dp"
-                android:layout_height="60dp"
-                android:src="@drawable/logo"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="10dp"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:text="Tour Mate"
-                android:fontFamily="cursive"
-                android:gravity="center_horizontal"
-                android:textColor="@color/colorAccent"
-                />
             <TextView
                 android:textColor="#505050"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:gravity="center_horizontal"
-                android:text="Please Login To Continue..."
+                android:text="Add a new travel event.."
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
@@ -61,63 +35,70 @@
                 <android.support.design.widget.TextInputEditText
                     android:padding="5dp"
                     android:textSize="20sp"
-                    android:id="@+id/userNameEditText"
+                    android:id="@+id/travelDestinationEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Email Address"
+                    android:hint="Travel Destination"
                     android:inputType="text"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_margin="5dp"
+                android:id="@+id/hello"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <android.support.design.widget.TextInputEditText
+                    android:padding="5dp"
+                    android:textSize="20sp"
+                    android:id="@+id/estimatedBudgetEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Estimated Budget"
+                    android:inputType="number"/>
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_margin="5dp"
                 android:id="@+id/hhhh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:passwordToggleEnabled="true"
                 >
                 <android.support.design.widget.TextInputEditText
                     android:padding="5dp"
                     android:textSize="20sp"
-                    android:id="@+id/passwordEditText"
+                    android:id="@+id/fromDateEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Password"
-                    android:inputType="textPassword"/>
+                    android:hint="From Date"
+                    android:inputType="date"/>
             </android.support.design.widget.TextInputLayout>
-            <Button
-                android:id="@+id/loginButton"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp"
-                android:padding="10dp"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Login"
-                android:background="#1162fa"
-                android:textColor="@android:color/white"
-                />
-            <TextView
-                android:textColor="#505050"
-                android:id="@+id/signUpTextView"
-                android:gravity="center_horizontal"
-                android:text="Don't have any account?"
+            <android.support.design.widget.TextInputLayout
+                android:layout_margin="5dp"
+                android:id="@+id/hhh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:textSize="16sp"
-                />
+                >
+                <android.support.design.widget.TextInputEditText
+                    android:padding="5dp"
+                    android:textSize="20sp"
+                    android:id="@+id/toDateEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="To Date"
+                    android:inputType="date"/>
+            </android.support.design.widget.TextInputLayout>
             <Button
-                android:id="@+id/registerButton"
+                android:id="@+id/signUpButton"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="5dp"
                 android:padding="10dp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Create a new account"
+                android:text="Add Travel Event"
                 android:background="#009900"
                 android:textColor="@android:color/white"
+                android:onClick="addTravelEvent"
                 />
         </LinearLayout>
     </ScrollView>

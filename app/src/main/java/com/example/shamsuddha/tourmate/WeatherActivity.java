@@ -22,7 +22,7 @@ public class WeatherActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu,menu);
+        getMenuInflater().inflate(R.menu.menu_before_login,menu);
         return super.onCreateOptionsMenu(menu);
     }
     @Override

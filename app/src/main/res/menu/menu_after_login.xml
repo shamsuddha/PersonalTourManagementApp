@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_home"
+        android:title="Home"
+        android:icon="@drawable/home"
+        app:showAsAction="always"
+        />
+
+
+    <item
+        android:id="@+id/action_add_travel_event"
+        android:title="Add Travel Event"
+    />
+
+    <item
+        android:id="@+id/action_view_travel_event"
+        android:title="View Travel Event"
+        />
+
+
+    <item
+        android:id="@+id/action_dashboard"
+        android:title="Dashboard"
+        />
+
+    <item
+        android:id="@+id/action_profile"
+        android:title="My Profile"
+        />
+
+    <item
+        android:id="@+id/action_logout"
+        android:title="Log Out"
+        />
+</menu>
