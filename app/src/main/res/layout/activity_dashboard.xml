@@ -37,6 +37,7 @@
                 android:layout_margin="4dp"
                 android:background="#FF0000"
                 android:id="@+id/aboutLayout"
+
                 >
                 <ImageView
                     android:id="@+id/addTravelEventImageView"

@@ -4,12 +4,12 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,49 +23,65 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewTravelEventActivity extends AppCompatActivity {
 
-    private DatabaseReference roofRef, userRef, travelEventRef;
+public class ViewTravelExpenseActivity extends AppCompatActivity {
+
+
     FirebaseAuth firebaseAuth;
-    ListView mTravelEventListView;
-    TravelEventAdapter travelEventAdapter;
-    List<TravelEvent> travelEventList = new ArrayList<>();
+    TextView expenseDetailsDate, expenseDetailsTextView, expenseAmountTextView;
+    ListView mTravelExpenseListView;
+    TravelEventExpenseAdapter travelEventExpenseAdapter;
+    List<TravelExpense> travelExpensesList  = new ArrayList<>();
+    private DatabaseReference roofRef, userRef, travelEventRef, travelEventIdRef, travelEventExpenseRef;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_travel_event);
+        setContentView(R.layout.activity_view_travel_expense);
 
+        expenseDetailsDate = findViewById(R.id. expenseDetailsDate);
+        expenseDetailsTextView  = findViewById(R.id. expenseDetailsTextView);
+        expenseAmountTextView  = findViewById(R.id. expenseAmountTextView);
+        mTravelExpenseListView = findViewById(R.id.travelExpenseListView);
 
-        mTravelEventListView = findViewById(R.id.travelEventListView);
 
         firebaseAuth = FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser() == null){
             finish();
-            Intent i = new Intent(ViewTravelEventActivity.this, MainActivity.class);
+            Intent i = new Intent(ViewTravelExpenseActivity.this, MainActivity.class);
             startActivity(i);
         }
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
+
         roofRef = FirebaseDatabase.getInstance().getReference();
+
         userRef = roofRef.child(user.getUid());
         travelEventRef = userRef.child("travelEvent");
+        travelEventIdRef = travelEventRef.child(travelEventRef.getKey());
+        travelEventExpenseRef = travelEventIdRef.child("travelExpense");
 
-        travelEventRef.addValueEventListener(new ValueEventListener() {
+
+
+        travelEventExpenseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                travelEventList.clear();
+                travelExpensesList.clear();
                 for(DataSnapshot d:dataSnapshot.getChildren()){
-                    TravelEvent travelEvent = d.getValue(TravelEvent.class);
-                    travelEventList.add(travelEvent);
+                    TravelExpense travelExpense = d.getValue(TravelExpense.class);
+                    travelExpensesList.add(travelExpense);
 
                 }
-                travelEventAdapter = new TravelEventAdapter( ViewTravelEventActivity.this, travelEventList);
-                mTravelEventListView.setAdapter(travelEventAdapter);
+
+                travelEventExpenseAdapter = new TravelEventExpenseAdapter( ViewTravelExpenseActivity.this, travelExpensesList);
+                mTravelExpenseListView.setAdapter(travelEventExpenseAdapter);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(ViewTravelEventActivity.this,"Failed!!",Toast.LENGTH_LONG).show();
+                Toast.makeText(ViewTravelExpenseActivity.this,"Failed!!",Toast.LENGTH_LONG).show();
             }
         });
 
@@ -73,22 +89,20 @@ public class ViewTravelEventActivity extends AppCompatActivity {
 
 
 
-        mTravelEventListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        /*travelExpenseListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                //int cid  = doctorList.get(position).getId();
-                String cid = travelEventList.get(position).getId();
-                Intent i = new Intent(ViewTravelEventActivity.this, TravelEeventDetaisActivity.class);
-                i.putExtra("id",cid);
-                startActivity(i);
-                return true;
+                Intent iaa = new Intent(ViewTravelExpenseActivity.this, TravelEeventDetaisActivity.class);
+                startActivity(iaa);
             }
-        });
+        });*/
+
 
 
 
     }
+
 
 
 
@@ -109,14 +123,14 @@ public class ViewTravelEventActivity extends AppCompatActivity {
         switch (id)
         {
             case R.id.action_home:
-                Intent home = new Intent(ViewTravelEventActivity.this, MainActivity.class);
+                Intent home = new Intent(ViewTravelExpenseActivity.this, MainActivity.class);
                 startActivity(home);
                 break;
 
             case R.id.action_logout:
                 firebaseAuth.signOut();
                 finish();
-                Intent signOut = new Intent(ViewTravelEventActivity.this, MainActivity.class);
+                Intent signOut = new Intent(ViewTravelExpenseActivity.this, MainActivity.class);
                 startActivity(signOut);
                 break;
 
@@ -128,8 +142,4 @@ public class ViewTravelEventActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     //------------------ Menu Section End --------------------------------
-
-
-
-
 }
