@@ -71,21 +71,10 @@ public class TravelEeventDetaisActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
         eventMemoriesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent memories = new Intent(TravelEeventDetaisActivity.this,EventMemoriesActivity.class);
+                Intent memories = new Intent(TravelEeventDetaisActivity.this,AddEventMemoriesActivity.class);
                 startActivity(memories);
 
 

@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.shamsuddha.tourmate">
 
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,14 +24,15 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".WeatherActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".TravelMomentsActivity" />
         <activity android:name=".ViewTravelEventActivity" />
         <activity android:name=".AddTravelEventActivity" />
         <activity android:name=".AddTravelExpenseActivity" />
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".TravelEeventDetaisActivity" />
         <activity android:name=".EventMemoriesActivity" />
-        <activity android:name=".ViewTravelExpenseActivity"></activity>
+        <activity android:name=".ViewTravelExpenseActivity" />
+        <activity android:name=".ViewEventMemoriesActivity" />
+        <activity android:name=".AddEventMemoriesActivity"></activity>
     </application>
 
 </manifest>

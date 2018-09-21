@@ -97,7 +97,7 @@ public class DashboardActivity extends AppCompatActivity {
         myMemoriesImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent travelEvent = new Intent(DashboardActivity.this, TravelMomentsActivity.class);
+                Intent travelEvent = new Intent(DashboardActivity.this, ViewEventMemoriesActivity.class);
                 startActivity(travelEvent);
             }
         });
