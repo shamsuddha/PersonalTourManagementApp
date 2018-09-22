@@ -33,16 +33,6 @@ public class TravelEeventDetaisActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
         eventDestinationTextView = findViewById(R.id.eventDestinationTextView);
         eventStartingDate = findViewById(R.id.eventStartingDate);
         eventEndingDate = findViewById(R.id.eventEndingDate);

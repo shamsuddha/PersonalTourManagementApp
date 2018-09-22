@@ -7,4 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".ViewEventMemoriesActivity">
 
+    <TextView
+        android:text="Event Memories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        />
+
 </LinearLayout>

@@ -14,6 +14,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +24,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -37,8 +40,7 @@ public class AddEventMemoriesActivity extends AppCompatActivity {
     EditText memoryDetailsEditText;
     Button saveMemory;
     private String mPhotoData;
-
-
+    FirebaseAuth firebaseAuth;
     private ImageView imageView, mImageViewMemory;
     private Uri filePath;
     FirebaseStorage storage;
@@ -94,20 +96,12 @@ public class AddEventMemoriesActivity extends AppCompatActivity {
         saveMemory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             uploadFile();
+                uploadFile();
             }
         });
 
 
-
-
-
-
     }
-
-
-
-
 
 
 
@@ -118,7 +112,8 @@ public class AddEventMemoriesActivity extends AppCompatActivity {
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setTitle("Uploading File...");
             progressDialog.show();
-            StorageReference riversRef = storageReference.child("images/").child(filePath.getLastPathSegment());
+           StorageReference riversRef = storageReference.child("images/").child(filePath.getLastPathSegment());
+
             riversRef.putFile(filePath)
 
                     .addOnFailureListener(new OnFailureListener() {
@@ -131,8 +126,11 @@ public class AddEventMemoriesActivity extends AppCompatActivity {
                     }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
+                    StorageReference riversRef = storageReference.child("images/").child(filePath.getLastPathSegment());
                     progressDialog.dismiss();
+
+                   // Uri downlaodUri  =  riversRef.getDownloadUrl();;
+
                     Toast.makeText(AddEventMemoriesActivity.this,"File Uploaded", Toast.LENGTH_SHORT).show();
 
                 }
@@ -174,6 +172,8 @@ public class AddEventMemoriesActivity extends AppCompatActivity {
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     progresssDialog.dismiss();
                     Toast.makeText(AddEventMemoriesActivity.this,"File Uploaded", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(AddEventMemoriesActivity.this,ViewEventMemoriesActivity.class);
+                    startActivity(i);
 
                 }
             }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
@@ -251,5 +251,43 @@ public class AddEventMemoriesActivity extends AppCompatActivity {
     }
 
 
+
+
+    //------------------ Menu Section ------------------------------------
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_after_login,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        return super.onPrepareOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id)
+        {
+            case R.id.action_home:
+                Intent home = new Intent(AddEventMemoriesActivity.this, MainActivity.class);
+                startActivity(home);
+                break;
+
+            case R.id.action_logout:
+                firebaseAuth.signOut();
+                finish();
+                Intent signOut = new Intent(AddEventMemoriesActivity.this, MainActivity.class);
+                startActivity(signOut);
+                break;
+
+
+
+            default:
+                Toast.makeText(this, "Something Went ", Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    //------------------ Menu Section End --------------------------------
 
 }
