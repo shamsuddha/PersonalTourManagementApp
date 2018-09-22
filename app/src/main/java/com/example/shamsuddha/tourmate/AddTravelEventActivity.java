@@ -1,10 +1,14 @@
 package com.example.shamsuddha.tourmate;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -14,7 +18,7 @@ public class AddTravelEventActivity extends AppCompatActivity {
 EditText mTravelDestinationEditText, mEstimatedBudgetEditText, mFromDateEditText, mToDateEditText;
     private DatabaseReference roofRef, userRef, travelEventRef;
     private FirebaseUser user;
-
+private DatePickerDialog datePickerDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +33,34 @@ EditText mTravelDestinationEditText, mEstimatedBudgetEditText, mFromDateEditText
         roofRef = FirebaseDatabase.getInstance().getReference();
         userRef = roofRef.child(user.getUid());
         travelEventRef = userRef.child("travelEvent");
+
+
+
+        mFromDateEditText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectFromDate ();
+            }
+        });
+
+
+
+
+
+
+    }
+
+    private void selectFromDate() {
+
+        datePickerDialog = new DatePickerDialog(AddTravelEventActivity.this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                Toast.makeText(AddTravelEventActivity.this, "Date Selected :"+dayOfMonth+":"+month+":"+year, Toast.LENGTH_SHORT).show();
+            }
+        }, 2018, 8, 27);
+
+       // mFromDateEditText.setText();
+        datePickerDialog.show();
 
     }
 
@@ -51,5 +83,20 @@ EditText mTravelDestinationEditText, mEstimatedBudgetEditText, mFromDateEditText
         startActivity(i);
 
 
+
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
 }

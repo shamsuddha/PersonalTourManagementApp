@@ -23,7 +23,7 @@ public class SignUpActivity extends AppCompatActivity {
     EditText userNameEditText, userEmailAddressEditText, userPasswordEditText;
     Button signUpButton, loginButton;
     FirebaseAuth firebaseAuth;
-
+TextView loginTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +41,8 @@ public class SignUpActivity extends AppCompatActivity {
 
         userEmailAddressEditText = findViewById(R.id.userEmailAddressEditText);
         userPasswordEditText = findViewById(R.id.userPasswordEditText);
-        loginButton = findViewById(R.id.loginButton);
         signUpButton = findViewById(R.id.signUpButton);
-
+        loginTextView = findViewById(R.id.loginTextView);
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +50,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        loginTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(SignUpActivity.this,MainActivity.class);

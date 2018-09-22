@@ -12,16 +12,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+
 public class MainActivity extends AppCompatActivity {
 
+
     EditText mUserNameEditText, mPasswordEditText;
-    Button mLoginButton, mRegisterButton;
+    Button mLoginButton;
     TextView mSignUpTextView;
     FirebaseAuth firebaseAuth;
 
@@ -43,8 +44,10 @@ public class MainActivity extends AppCompatActivity {
         mUserNameEditText = findViewById(R.id.userNameEditText);
         mPasswordEditText = findViewById(R.id.passwordEditText);
         mLoginButton = findViewById(R.id.loginButton);
+        mSignUpTextView = findViewById(R.id.signUpTextView);
 
-        mRegisterButton = findViewById(R.id.registerButton);
+
+
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,9 +58,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
-        mRegisterButton.setOnClickListener(new View.OnClickListener() {
+        mSignUpTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, SignUpActivity.class);

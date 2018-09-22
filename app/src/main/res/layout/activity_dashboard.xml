@@ -15,9 +15,9 @@
         tools:context=".DashboardActivity">
         <TextView
             android:fontFamily="sans-serif-condensed"
-            android:text="Welcome To Dashboard"
+            android:text="Welcome to Dashboard"
             android:layout_margin="10dp"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#505050"
@@ -25,13 +25,13 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="200dp"
             android:orientation="horizontal"
             android:layout_marginBottom="15dp"
             >
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="200dp"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_margin="4dp"
@@ -42,10 +42,10 @@
                 <ImageView
                     android:id="@+id/addTravelEventImageView"
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="120dp"
                     android:layout_gravity="center"
                     android:padding="25dp"
-                    android:src="@drawable/home"
+                    android:src="@drawable/travel_event"
                     />
                 <TextView
                     android:id="@+id/addTravelEventTextView"
@@ -60,7 +60,7 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="200dp"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_margin="4dp"
@@ -70,7 +70,7 @@
                 <ImageView
                     android:id="@+id/myTravelEventsImageView"
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="120dp"
                     android:layout_gravity="center"
                     android:padding="25dp"
                     android:src="@drawable/home"
@@ -90,14 +90,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="200dp"
             android:orientation="horizontal"
             android:layout_marginBottom="15dp"
             >
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="200dp"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_margin="4dp"
@@ -107,7 +107,7 @@
                 <ImageView
                     android:id="@+id/myProfileImageView"
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="120dp"
                     android:src="@drawable/home"
                     android:layout_gravity="center"
                     android:padding="25dp"
@@ -125,7 +125,7 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="200dp"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_margin="4dp"
@@ -135,7 +135,7 @@
                 <ImageView
                     android:id="@+id/weatherImageView"
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="120dp"
                     android:layout_gravity="center"
                     android:padding="25dp"
                     android:src="@drawable/home"
@@ -154,13 +154,13 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="200dp"
             android:orientation="horizontal"
             android:layout_marginBottom="15dp"
             >
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="200dp"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_margin="4dp"
@@ -169,7 +169,7 @@
                 >
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="120dp"
                     android:layout_gravity="center"
                     android:padding="25dp"
                     android:id="@+id/nearByPlacesImageView"
@@ -188,7 +188,7 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="200dp"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_margin="4dp"
@@ -197,7 +197,7 @@
                 >
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="120dp"
                     android:layout_gravity="center"
                     android:padding="25dp"
                     android:id="@+id/myMemoriesImageView"
