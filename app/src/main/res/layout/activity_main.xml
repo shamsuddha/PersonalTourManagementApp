@@ -45,7 +45,7 @@
             <TextView
                 android:textColor="#505050"
                 android:textStyle="bold"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:gravity="center_horizontal"
                 android:text="Please Login To Continue..."
                 android:layout_marginTop="25dp"
