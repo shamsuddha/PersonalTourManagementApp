@@ -71,20 +71,18 @@ public class ViewTravelEventActivity extends AppCompatActivity {
 
 
 
-
-
-        mTravelEventListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        mTravelEventListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String cid = travelEventList.get(i).getId();
+                Intent in = new Intent(ViewTravelEventActivity.this, TravelEeventDetaisActivity.class);
+                in.putExtra("id",cid);
+                startActivity(in);
 
-                //int cid  = doctorList.get(position).getId();
-                String cid = travelEventList.get(position).getId();
-                Intent i = new Intent(ViewTravelEventActivity.this, TravelEeventDetaisActivity.class);
-                i.putExtra("id",cid);
-                startActivity(i);
-                return true;
             }
         });
+
+
 
 
 

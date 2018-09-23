@@ -14,39 +14,31 @@
         android:layout_height="match_parent"
         tools:context=".ProfileActivity">
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
+                android:layout_gravity="center"
                 android:layout_margin="5dp"
-                android:layout_width="110dp"
-                android:layout_height="120dp"
-                android:src="@drawable/avatar"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/profile_pic"
                 />
-            <LinearLayout
-                android:orientation="vertical"
+
+            <TextView
+                android:id="@+id/editProfileTextView"
+                android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_margin="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:text="Shamsuddha al amin"
-                    android:fontFamily="sans-serif-condensed"
-                    />
-                <TextView
-                    android:id="@+id/editProfileTextView"
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:text="Edit My Profile"
-                    android:fontFamily="sans-serif-condensed"
-                    />
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Set Profile picture"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="sans-serif-condensed"
+                />
+
         </LinearLayout>
         <LinearLayout
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -94,7 +86,7 @@
                 android:layout_margin="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:text="Address: "
                 android:fontFamily="sans-serif-condensed"
                 />
@@ -106,88 +98,14 @@
                 android:fontFamily="sans-serif-condensed"
                 />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            >
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:layout_margin="4dp"
-                android:background="#0080FF"
-                android:gravity="center"
-                android:padding="10dp"
-                >
-                <ImageView
-                    android:padding="5dp"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/travel_event"
-                    />
-                <TextView
-                    android:padding="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="000"
-                    android:textSize="35sp"
-                    android:textColor="#f0f0f0"
-                    >
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="Total Events"
-                    android:layout_margin="5dp"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textColor="#f0f0f0"
-                    />
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:layout_margin="4dp"
-                android:background="#ED851E"
-                android:gravity="center"
-                android:padding="10dp"
-                >
-                <ImageView
-                    android:padding="5dp"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/expence"
-                    />
-                <TextView
-                    android:padding="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="000"
-                    android:textSize="35sp"
-                    android:textColor="#f0f0f0"
-                    >
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="Total Expense"
-                    android:layout_margin="5dp"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textColor="#f0f0f0"
-                    />
-            </LinearLayout>
-        </LinearLayout>
+        <Button
+            android:id="@+id/editProfile"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Edit Profile"
+            />
     </LinearLayout>
+
 </ScrollView>

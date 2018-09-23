@@ -29,6 +29,7 @@
             android:orientation="horizontal"
             android:layout_marginBottom="15dp"
             >
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="200dp"
@@ -58,6 +59,7 @@
                     android:textStyle="bold"
                     />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="200dp"

@@ -33,10 +33,7 @@ public class AddTravelExpenseActivity extends AppCompatActivity {
         userRef = roofRef.child(user.getUid());
         travelEventRef = userRef.child("travelEvent");
       //  String keId = travelEventRef.getKey();
-        travelEventExpenseRef = travelEventRef.child(travelEventRef.getKey()).child("travelExpense");
-
-
-
+        travelEventExpenseRef = travelEventRef.child("travelExpense");
 
     }
 
@@ -47,19 +44,11 @@ public class AddTravelExpenseActivity extends AppCompatActivity {
         String xpenseDetails = expenseDetails.getText().toString();
         String xpenseAmount = expenseAmount.getText().toString();
         String keyId = travelEventExpenseRef.push().getKey();
-
-
         TravelExpense travelExpense = new TravelExpense(keyId,xpenseDetails,xpenseAmount);
         travelEventExpenseRef.child(keyId).setValue(travelExpense);
-
-
         /// after checking transfer to a view travel event activity
-
         Intent i = new Intent(AddTravelExpenseActivity.this, ViewTravelExpenseActivity.class);
         startActivity(i);
-
-
-
 
     }
 
