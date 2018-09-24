@@ -52,9 +52,22 @@ public class TravelEeventDetaisActivity extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         roofRef = FirebaseDatabase.getInstance().getReference();
         userRef = roofRef.child(user.getUid());
-       // travelEventRef = userRef.child("travelEvent").getKey().contentEquals();
+
+
+       // travelEventRef = userRef.child("travelEvent").getKey();
 
        // travelEventIDRef = travelEventRef.getKey().e;
+
+
+        editEventButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent in = new Intent(TravelEeventDetaisActivity.this, AddTravelEventActivity.class);
+                in.putExtra("id", id);
+                startActivity(in);
+            }
+        });
 
 
 

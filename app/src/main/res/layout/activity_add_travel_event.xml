@@ -23,6 +23,7 @@
                 android:layout_height="200dp">
             </LinearLayout>
             <TextView
+                android:id="@+id/addTravelEventText"
                 android:textColor="#505050"
                 android:textSize="20sp"
                 android:paddingLeft="10dp"

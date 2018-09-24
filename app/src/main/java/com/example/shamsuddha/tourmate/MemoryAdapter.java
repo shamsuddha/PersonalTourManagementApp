@@ -39,7 +39,7 @@ public class MemoryAdapter extends ArrayAdapter {
 
 
         Picasso.get()
-                .load("https://www.kickante.com.br/sites/default/files/financiamento-coletivo/pitch/zeppelin_tour_viagens_turismo-528326.jpg")
+                .load(memoryList.get(position).getUri())
                 .into(eventMemories);
 
 
