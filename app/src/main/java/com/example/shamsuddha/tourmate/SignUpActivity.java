@@ -1,5 +1,6 @@
 package com.example.shamsuddha.tourmate;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +24,8 @@ public class SignUpActivity extends AppCompatActivity {
     EditText userNameEditText, userEmailAddressEditText, userPasswordEditText;
     Button signUpButton, loginButton;
     FirebaseAuth firebaseAuth;
-TextView loginTextView;
+    TextView loginTextView;
+    ProgressDialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +55,8 @@ TextView loginTextView;
         loginTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(SignUpActivity.this,MainActivity.class);
+
+                Intent i = new Intent(SignUpActivity.this, MainActivity.class);
                 startActivity(i);
             }
         });

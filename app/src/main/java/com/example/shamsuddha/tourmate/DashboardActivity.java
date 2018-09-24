@@ -1,5 +1,6 @@
 package com.example.shamsuddha.tourmate;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -63,6 +64,7 @@ public class DashboardActivity extends AppCompatActivity {
         myTravelEventsImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent travelEvent = new Intent(DashboardActivity.this, ViewTravelEventActivity.class);
                 startActivity(travelEvent);
             }
@@ -107,6 +109,8 @@ public class DashboardActivity extends AppCompatActivity {
         myTravelEventsTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ProgressDialog   dialog = new ProgressDialog(DashboardActivity.this);
+                dialog.setMessage("Please Wait");
                 Intent travelEvent = new Intent(DashboardActivity.this, ViewTravelEventActivity.class);
                 startActivity(travelEvent);
             }

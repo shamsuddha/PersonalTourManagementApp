@@ -23,17 +23,14 @@ public class AddTravelExpenseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_travel_expense);
-
-
         expenseDetails = findViewById(R.id.expenseDetails);
         expenseAmount = findViewById(R.id.expenseAmount);
-
         user = FirebaseAuth.getInstance().getCurrentUser();
         roofRef = FirebaseDatabase.getInstance().getReference();
         userRef = roofRef.child(user.getUid());
         travelEventRef = userRef.child("travelEvent");
-      //  String keId = travelEventRef.getKey();
-        travelEventExpenseRef = travelEventRef.child("travelExpense");
+        String keId = travelEventRef.getKey();
+        travelEventExpenseRef = travelEventRef.child(keId).child("travelExpense");
 
     }
 

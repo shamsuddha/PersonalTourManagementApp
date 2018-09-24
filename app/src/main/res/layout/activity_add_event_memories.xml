@@ -4,20 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:padding="10dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
     tools:context=".AddEventMemoriesActivity">
 
-    <TextView
-        android:textColor="#505050"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:gravity="center_horizontal"
-        android:text="Upload or Take Photo to add moment..."
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+
 
 
     <ImageView
@@ -25,12 +18,25 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        android:src="@drawable/home"
+        android:src="@drawable/upload"
+        android:layout_marginLeft="10dp"
+
         />
 
+    <TextView
+        android:textColor="#505050"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"
+        android:text="Upload or Take Picture"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <LinearLayout
+        android:layout_marginTop="10dp"
         android:gravity="center"
+        android:layout_gravity="center_horizontal"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -65,6 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Memory Caption here....."
+        android:gravity="center_horizontal"
         />
 
     <Button

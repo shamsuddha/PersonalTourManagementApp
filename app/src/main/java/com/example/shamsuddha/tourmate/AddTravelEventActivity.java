@@ -15,10 +15,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 public class AddTravelEventActivity extends AppCompatActivity {
 
-EditText mTravelDestinationEditText, mEstimatedBudgetEditText, mFromDateEditText, mToDateEditText;
+    EditText mTravelDestinationEditText, mEstimatedBudgetEditText, mFromDateEditText, mToDateEditText;
     private DatabaseReference roofRef, userRef, travelEventRef;
     private FirebaseUser user;
-private DatePickerDialog datePickerDialog;
+    private DatePickerDialog datePickerDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +59,7 @@ private DatePickerDialog datePickerDialog;
             }
         }, 2018, 8, 27);
 
-       // mFromDateEditText.setText();
+        // mFromDateEditText.setText();
         datePickerDialog.show();
 
     }
@@ -84,19 +84,7 @@ private DatePickerDialog datePickerDialog;
 
 
 
-
-
     }
-
-
-
-
-
-
-
-
-
-
 
 
 }

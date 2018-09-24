@@ -14,14 +14,12 @@
         android:layout_height="match_parent"
         tools:context=".DoctorDetailsActivity">
         <TextView
-            android:textColor="#00A6CE"
             android:id="@+id/allDoctorsTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Travel Event Details"
-            android:textSize="25sp"
-            android:textStyle="bold"
+            android:textSize="20sp"
             android:layout_marginBottom="10dp"
             />
 
@@ -30,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="DESTINATION"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="25dp"
@@ -64,7 +62,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
-                android:textStyle="bold"
                 android:text="Ending Date "
                 android:layout_marginBottom="10dp"
                 />
@@ -86,7 +83,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
-                android:textStyle="bold"
                 android:text="Estimated Budget "
                 android:layout_marginBottom="10dp"
                 />
@@ -110,9 +106,9 @@
                 android:layout_width="150dp"
                 android:textAllCaps="false"
                 android:layout_height="220dp"
-                android:text="Event Memories"
-                android:background="@drawable/background"
-                android:textColor="@android:color/white"
+                android:text="Add Event Memories"
+                android:background="#B4B4B4"
+
                 android:textSize="22sp"
                 />
             <LinearLayout
@@ -132,8 +128,7 @@
                         android:textAllCaps="false"
                         android:layout_height="100dp"
                         android:text="Edit Event"
-                        android:background="@color/colorPrimary"
-                        android:textColor="@android:color/white"
+                        android:background="#80C687"
                         />
                     <Button android:id="@+id/deleteEventButton"
                         android:layout_margin="2dp"
@@ -142,8 +137,8 @@
                         android:textAllCaps="false"
                         android:layout_height="100dp"
                         android:text="Delete Event"
-                        android:background="#FF2A2A"
-                        android:textColor="@android:color/white"
+                        android:background="#F27360"
+
                         />
                 </LinearLayout>
                 <LinearLayout
@@ -158,8 +153,8 @@
                         android:textAllCaps="false"
                         android:layout_height="100dp"
                         android:text="Add Travel Expense"
-                        android:background="#095E09"
-                        android:textColor="@android:color/white"
+                        android:background="#F691B3"
+
                         />
                     <Button android:id="@+id/viewTravelExpenseButton"
                         android:layout_margin="2dp"
@@ -169,7 +164,7 @@
                         android:layout_height="100dp"
                         android:text="View Travel Expense"
                         android:background="#557FFF"
-                        android:textColor="@android:color/white"
+
                         />
                 </LinearLayout>
             </LinearLayout>
