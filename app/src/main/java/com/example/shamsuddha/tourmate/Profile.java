@@ -7,6 +7,7 @@ public class Profile {
     String contactNumber;
     String address;
 
+
     public Profile(String id, String name, String contactNumber, String address) {
         this.id = id;
         this.name = name;

@@ -60,10 +60,11 @@ public class ViewTravelExpenseActivity extends AppCompatActivity {
 
         userRef = roofRef.child(user.getUid());
         travelEventRef = userRef.child("travelEvent");
-        travelEventIdRef = travelEventRef.child(travelEventRef.getKey());
-        travelEventExpenseRef = travelEventIdRef.child("travelExpense");
 
-
+        Intent intent = getIntent();
+        String key = intent.getStringExtra("id");
+        travelEventRef = userRef.child("travelEvent");
+        travelEventExpenseRef = travelEventRef.child(key).child("travelExpense");
 
         travelEventExpenseRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -84,10 +85,6 @@ public class ViewTravelExpenseActivity extends AppCompatActivity {
                 Toast.makeText(ViewTravelExpenseActivity.this,"Failed!!",Toast.LENGTH_LONG).show();
             }
         });
-
-
-
-
 
         /*travelExpenseListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

@@ -146,7 +146,7 @@
                     android:src="@drawable/dashboard_weather"
                     />
                 <TextView
-                    android:textColor="@color/white"
+
                     android:id="@+id/weatherTextView"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"

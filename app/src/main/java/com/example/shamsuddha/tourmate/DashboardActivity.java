@@ -91,7 +91,7 @@ public class DashboardActivity extends AppCompatActivity {
         nearByPlacesImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent travelEvent = new Intent(DashboardActivity.this, NearByPlacesActivity.class);
+                Intent travelEvent = new Intent(DashboardActivity.this, MapsActivity.class);
                 startActivity(travelEvent);
             }
         });

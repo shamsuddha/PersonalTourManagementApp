@@ -6,41 +6,89 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import org.w3c.dom.Text;
 
 public class ProfileActivity extends AppCompatActivity {
-TextView mEditProfileTextView;
-
-
+    TextView mEditProfileTextView;
+    ImageView profile_picture;
     FirebaseAuth firebaseAuth;
+    TextView mEditProfilePicTextView, emailTextView, contactNumberTextView, addressTextView;
+    Button editProfile;
+    FirebaseUser user;
+    private StorageReference storageReference;
+
+
+    private DatabaseReference roofRef, userRef, profileRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+
+        storageReference = FirebaseStorage.getInstance().getReference();
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        roofRef = FirebaseDatabase.getInstance().getReference();
+        userRef = roofRef.child(user.getUid());
+        profileRef = userRef.child("profileInfo");
+
+
+
+
+        mEditProfilePicTextView = findViewById(R.id.editProfilePicTextView);
+        emailTextView = findViewById(R.id.emailTextView);
+        contactNumberTextView = findViewById(R.id.contactNumberTextView);
+        addressTextView = findViewById(R.id.addressTextView);
+        profile_picture = findViewById(R.id.profile_picture);
+        editProfile = findViewById(R.id.editProfile);
+
+
         firebaseAuth = FirebaseAuth.getInstance();
+
         if(firebaseAuth.getCurrentUser() == null){
             finish();
             Intent i = new Intent(ProfileActivity.this, MainActivity.class);
             startActivity(i);
         }
-        FirebaseUser user = firebaseAuth.getCurrentUser();
 
-
-        mEditProfileTextView = findViewById(R.id.editProfileTextView);
-
-
-        mEditProfileTextView.setOnClickListener(new View.OnClickListener() {
+        final FirebaseUser user = firebaseAuth.getCurrentUser();
+        mEditProfilePicTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent editProfile = new Intent(ProfileActivity.this, EditProfileActivity.class);
+                Intent editProfilePic = new Intent(ProfileActivity.this, EditProfilePictureActivity.class)
+                        .putExtra("id", user.getUid() )
+                        ;
+                startActivity(editProfilePic);
+            }
+        });
+
+
+        editProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent editProfile = new Intent(ProfileActivity.this, EditProfileActivity.class)
+                        .putExtra("id", user.getUid() )
+                        ;
                 startActivity(editProfile);
             }
         });
+
+
+        emailTextView.setText(firebaseAuth.getCurrentUser().getEmail());
+
+
+
 
     }
 

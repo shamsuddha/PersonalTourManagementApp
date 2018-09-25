@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TourMate</string>
+    <string name="title_activity_nearby_activtiy">Map</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

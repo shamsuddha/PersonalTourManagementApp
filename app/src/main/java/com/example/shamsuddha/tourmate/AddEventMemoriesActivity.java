@@ -64,7 +64,13 @@ public class AddEventMemoriesActivity extends AppCompatActivity {
         roofRef = FirebaseDatabase.getInstance().getReference();
         userRef = roofRef.child(user.getUid());
         travelEventRef = userRef.child("travelEvent");
-        memoryRef = travelEventRef.child("memories");
+
+        Intent intent = getIntent();
+        String key = intent.getStringExtra("id");
+        travelEventRef = userRef.child("travelEvent");
+        memoryRef = travelEventRef.child(key).child("memories");
+
+
 
         imageViewMemoryTakePhoto = findViewById(R.id.imageViewMemoryTakePhoto);
         mImageViewMemory = findViewById(R.id.imageViewMemory);

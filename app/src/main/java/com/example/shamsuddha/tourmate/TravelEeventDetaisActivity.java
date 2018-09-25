@@ -77,7 +77,8 @@ public class TravelEeventDetaisActivity extends AppCompatActivity {
         eventMemoriesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent memories = new Intent(TravelEeventDetaisActivity.this,AddEventMemoriesActivity.class);
+                Intent memories = new Intent(TravelEeventDetaisActivity.this,AddEventMemoriesActivity.class)
+                        .putExtra("id", id);;
                 startActivity(memories);
 
 
@@ -87,7 +88,8 @@ public class TravelEeventDetaisActivity extends AppCompatActivity {
         addTravelExpenseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent expense = new Intent(TravelEeventDetaisActivity.this,AddTravelExpenseActivity.class);
+                Intent expense = new Intent(TravelEeventDetaisActivity.this,AddTravelExpenseActivity.class)
+                        .putExtra("id", id);
                 startActivity(expense);
             }
         });
@@ -96,7 +98,8 @@ public class TravelEeventDetaisActivity extends AppCompatActivity {
         viewTravelExpenseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent expense = new Intent(TravelEeventDetaisActivity.this,ViewTravelExpenseActivity.class);
+                Intent expense = new Intent(TravelEeventDetaisActivity.this,ViewTravelExpenseActivity.class)
+                        .putExtra("id", id);
                 startActivity(expense);
             }
         });

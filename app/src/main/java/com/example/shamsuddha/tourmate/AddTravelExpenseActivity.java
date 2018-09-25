@@ -14,6 +14,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.security.Key;
+
 public class AddTravelExpenseActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
@@ -23,20 +25,25 @@ public class AddTravelExpenseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_travel_expense);
+
         expenseDetails = findViewById(R.id.expenseDetails);
         expenseAmount = findViewById(R.id.expenseAmount);
         user = FirebaseAuth.getInstance().getCurrentUser();
         roofRef = FirebaseDatabase.getInstance().getReference();
         userRef = roofRef.child(user.getUid());
+        Intent intent = getIntent();
+        String key = intent.getStringExtra("id");
         travelEventRef = userRef.child("travelEvent");
-        String keId = travelEventRef.getKey();
-        travelEventExpenseRef = travelEventRef.child(keId).child("travelExpense");
-
+        travelEventExpenseRef = travelEventRef.child(key).child("travelExpense");
+        // travelEventExpenseRef = travelEventRef.child(KeyId).child("travelExpense");
+        // String keyId = travelEventRef.push().getKey();
     }
 
 
     public void addExpense(View view) {
 
+        Intent intent = getIntent();
+        String keys = intent.getStringExtra("id");
 
         String xpenseDetails = expenseDetails.getText().toString();
         String xpenseAmount = expenseAmount.getText().toString();
@@ -44,7 +51,8 @@ public class AddTravelExpenseActivity extends AppCompatActivity {
         TravelExpense travelExpense = new TravelExpense(keyId,xpenseDetails,xpenseAmount);
         travelEventExpenseRef.child(keyId).setValue(travelExpense);
         /// after checking transfer to a view travel event activity
-        Intent i = new Intent(AddTravelExpenseActivity.this, ViewTravelExpenseActivity.class);
+        Intent i = new Intent(AddTravelExpenseActivity.this, ViewTravelExpenseActivity.class)
+                .putExtra("id", keys);
         startActivity(i);
 
     }
