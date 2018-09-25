@@ -41,7 +41,7 @@ public class ViewTravelExpenseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_travel_expense);
 
-        expenseDetailsDate = findViewById(R.id. expenseDetailsDate);
+
         expenseDetailsTextView  = findViewById(R.id. expenseDetailsTextView);
         expenseAmountTextView  = findViewById(R.id. expenseAmountTextView);
         mTravelExpenseListView = findViewById(R.id.travelExpenseListView);
