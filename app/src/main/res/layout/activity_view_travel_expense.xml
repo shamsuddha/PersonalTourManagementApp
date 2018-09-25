@@ -10,11 +10,16 @@
 
 
     <TextView
-        android:textColor="@color/colorPrimary"
-        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_margin="5dp"
+        android:gravity="center_horizontal"
+        android:text="Expense List"
+        android:id="@+id/travelEventNameTextView"
+        android:textColor="#505050"
+        android:textSize="20sp"
+        android:layout_marginBottom="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="All Travel Expense List"
         />
 
 
