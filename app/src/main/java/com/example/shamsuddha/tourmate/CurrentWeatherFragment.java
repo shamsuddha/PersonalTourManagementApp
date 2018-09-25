@@ -67,21 +67,28 @@ public class CurrentWeatherFragment extends Fragment {
             public void onResponse(Call<CurrentWeather> call, Response<CurrentWeather> response) {
                 CurrentWeather weather = response.body();
                 //Toast.makeText(getContext(), "" + weather.getMain().getTemp(), Toast.LENGTH_LONG).show();
-                ctemp1.setText(String.valueOf(weather.getMain().getTemp()) + "°" + units);
-                maxTemp.setText("Max:"+String.valueOf(weather.getMain().getTempMax()).toString() + "°" + units);
-                minTemp.setText("Min:"+String.valueOf(weather.getMain().getTempMin()).toString() + "°" + units);
-                humidity.setText("Hum:"+String.valueOf(weather.getMain().getHumidity()).toString()+"%");
-                windspeed.setText("Speed:"+String.valueOf(weather.getWind().getSpeed()).toString()+"km");
-                winddeg.setText("Deg:"+String.valueOf(weather.getWind().getDeg()).toString()+"°");
-                windpres.setText("Press:"+String.valueOf(weather.getMain().getPressure()).toString()+"hPa");
-                city.setText(weather.getName() + "," + weather.getSys().getCountry());
-                date.setText(dateformat(weather.getDt()).toString());
 
-                java.util.List<Weather> weatherList = weather.getWeather();
-                for (Weather obj : weatherList) {
-                    String icon = String.valueOf(obj.getIcon());
-                    Picasso.get().load("http://openweathermap.org/img/w/" + icon + ".png").into(imageView);
-                    details.setText(String.valueOf(obj.getDescription()));
+                if(weather!=null) {
+
+                    ctemp1.setText(String.valueOf(weather.getMain().getTemp()) + "°" + units);
+                    maxTemp.setText("Max:" + String.valueOf(weather.getMain().getTempMax()).toString() + "°" + units);
+                    minTemp.setText("Min:" + String.valueOf(weather.getMain().getTempMin()).toString() + "°" + units);
+                    humidity.setText("Hum:" + String.valueOf(weather.getMain().getHumidity()).toString() + "%");
+                    windspeed.setText("Speed:" + String.valueOf(weather.getWind().getSpeed()).toString() + "km");
+                    winddeg.setText("Deg:" + String.valueOf(weather.getWind().getDeg()).toString() + "°");
+                    windpres.setText("Press:" + String.valueOf(weather.getMain().getPressure()).toString() + "hPa");
+                    city.setText(weather.getName() + "," + weather.getSys().getCountry());
+                    date.setText(dateformat(weather.getDt()).toString());
+
+                    java.util.List<Weather> weatherList = weather.getWeather();
+                    for (Weather obj : weatherList) {
+                        String icon = String.valueOf(obj.getIcon());
+                        Picasso.get().load("http://openweathermap.org/img/w/" + icon + ".png").into(imageView);
+                        details.setText(String.valueOf(obj.getDescription()));
+                    }
+
+                }else {
+                    Toast.makeText(getActivity(), "Not Found", Toast.LENGTH_SHORT).show();
                 }
 
             }
