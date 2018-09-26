@@ -94,8 +94,15 @@
                 android:layout_marginBottom="10dp"
                 />
         </LinearLayout>
-
-
+        <Button android:id="@+id/showEventMemories"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content"
+            android:text="Show Event Memories"
+            android:background="#539699"
+            android:textSize="22sp"
+            />
         <LinearLayout
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
@@ -105,10 +112,9 @@
                 android:padding="5dp"
                 android:layout_width="150dp"
                 android:textAllCaps="false"
-                android:layout_height="220dp"
+                android:layout_height="215dp"
                 android:text="Add Event Memories"
-                android:background="#B4B4B4"
-
+                android:background="#C5E16F"
                 android:textSize="22sp"
                 />
             <LinearLayout
@@ -117,25 +123,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout
-                    android:layout_marginTop="5dp"
+
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <Button android:id="@+id/editEventButton"
                         android:layout_margin="2dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:textAllCaps="false"
-                        android:layout_height="100dp"
+                        android:layout_height="102dp"
                         android:text="Edit Event"
-                        android:background="#80C687"
+                        android:background="#A8D18A"
                         />
                     <Button android:id="@+id/deleteEventButton"
                         android:layout_margin="2dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:textAllCaps="false"
-                        android:layout_height="100dp"
+                        android:layout_height="102dp"
                         android:text="Delete Event"
                         android:background="#F27360"
 
@@ -154,7 +161,6 @@
                         android:layout_height="100dp"
                         android:text="Add Travel Expense"
                         android:background="#F691B3"
-
                         />
                     <Button android:id="@+id/viewTravelExpenseButton"
                         android:layout_margin="2dp"
@@ -164,7 +170,6 @@
                         android:layout_height="100dp"
                         android:text="View Travel Expense"
                         android:background="#557FFF"
-
                         />
                 </LinearLayout>
             </LinearLayout>

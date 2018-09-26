@@ -39,21 +39,21 @@ public class ViewEventMemoriesActivity extends AppCompatActivity {
         memoriyListView = findViewById(R.id.memoriyListView);
         eventMemories = findViewById(R.id.eventMemories);
         eventMemoriesCaptionTextView = findViewById(R.id.eventMemoriesCaptionTextView);
-
-
         firebaseAuth = FirebaseAuth.getInstance();
-
         if(firebaseAuth.getCurrentUser() == null){
             finish();
             Intent i = new Intent(ViewEventMemoriesActivity.this, MainActivity.class);
             startActivity(i);
         }
-
         FirebaseUser user = firebaseAuth.getCurrentUser();
         roofRef = FirebaseDatabase.getInstance().getReference();
         userRef = roofRef.child(user.getUid());
+
+        Intent intent = getIntent();
+        String key = intent.getStringExtra("id");
         travelEventRef = userRef.child("travelEvent");
-        memoryRef = travelEventRef.child("memories");
+        memoryRef = travelEventRef.child(key).child("memories");
+
         memoryRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -61,7 +61,6 @@ public class ViewEventMemoriesActivity extends AppCompatActivity {
                 for(DataSnapshot d:dataSnapshot.getChildren()){
                     Memories memories = d.getValue(Memories.class);
                     memoryList.add(memories);
-
                 }
                 memoryAdapter  = new MemoryAdapter( ViewEventMemoriesActivity.this, memoryList);
                 memoriyListView.setAdapter(memoryAdapter);
@@ -73,26 +72,7 @@ public class ViewEventMemoriesActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-   /*     Picasso.get()
-                .load(userResponse.getResults().get(0).getPicture().getLarge())
-                .into(imageViewId);
-
-*/
-
     }
-
-
-
-
-
-
-
-
 
 
 

@@ -72,6 +72,7 @@ public class AddEventMemoriesActivity extends AppCompatActivity {
 
 
 
+
         imageViewMemoryTakePhoto = findViewById(R.id.imageViewMemoryTakePhoto);
         mImageViewMemory = findViewById(R.id.imageViewMemory);
         imageViewMemoryUpload = findViewById(R.id.imageViewMemoryUpload);
@@ -164,7 +165,7 @@ public class AddEventMemoriesActivity extends AppCompatActivity {
                     Memories memories = new Memories(keyId,caption,url);
                     memoryRef.child(keyId).setValue(memories);
                     /// after checking transfer to a view travel event activity
-                    Intent i = new Intent(AddEventMemoriesActivity.this, ViewEventMemoriesActivity.class);
+                    Intent i = new Intent(AddEventMemoriesActivity.this, DashboardActivity.class);
                     startActivity(i);
 
 

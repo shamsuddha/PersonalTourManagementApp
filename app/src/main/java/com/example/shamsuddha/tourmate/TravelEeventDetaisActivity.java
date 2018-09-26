@@ -22,7 +22,8 @@ import com.google.firebase.database.ValueEventListener;
 public class TravelEeventDetaisActivity extends AppCompatActivity {
 
     TextView eventDestinationTextView, eventStartingDate, eventEndingDate, estimatedBudgetTextView;
-    Button eventMemoriesButton, addTravelExpenseButton, viewTravelExpenseButton, editEventButton, deleteEventButton;
+    Button eventMemoriesButton, addTravelExpenseButton, viewTravelExpenseButton, editEventButton, deleteEventButton,
+            showEventMemories;
     FirebaseAuth firebaseAuth;
     private DatabaseReference roofRef, userRef, travelEventRef, travelEventIDRef;
     private FirebaseUser user;
@@ -44,7 +45,7 @@ public class TravelEeventDetaisActivity extends AppCompatActivity {
         viewTravelExpenseButton = findViewById(R.id.viewTravelExpenseButton);
         editEventButton = findViewById(R.id.editEventButton);
         deleteEventButton = findViewById(R.id.deleteEventButton);
-
+        showEventMemories = findViewById(R.id.showEventMemories);
 
 
 
@@ -78,7 +79,7 @@ public class TravelEeventDetaisActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent memories = new Intent(TravelEeventDetaisActivity.this,AddEventMemoriesActivity.class)
-                        .putExtra("id", id);;
+                        .putExtra("id", id);
                 startActivity(memories);
 
 
@@ -106,20 +107,16 @@ public class TravelEeventDetaisActivity extends AppCompatActivity {
 
 
 
-
+        showEventMemories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent memories = new Intent(TravelEeventDetaisActivity.this,ViewEventMemoriesActivity.class)
+                        .putExtra("id", id);
+                startActivity(memories);
+            }
+        });
 
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -159,10 +156,6 @@ public class TravelEeventDetaisActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     //------------------ Menu Section End --------------------------------
-
-
-
-
 
 
 }

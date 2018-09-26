@@ -18,7 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 public class DashboardActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
-    TextView addTravelEventTextView, myTravelEventsTextView, myProfileTextView, weatherTextView, nearByPlacesTextView, myMemoriesTextView;
+    TextView addTravelEventTextView, myTravelEventsTextView, weatherTextView, nearByPlacesTextView;
     ImageView mAddTravelEventImageView, myTravelEventsImageView, myProfileImageView, weatherImageView, nearByPlacesImageView,
             myMemoriesImageView;
     @Override
@@ -35,10 +35,10 @@ public class DashboardActivity extends AppCompatActivity {
 
         mAddTravelEventImageView = findViewById(R.id.addTravelEventImageView);
         myTravelEventsImageView = findViewById(R.id.myTravelEventsImageView);
-        myProfileImageView = findViewById(R.id.myProfileImageView);
+       // myProfileImageView = findViewById(R.id.myProfileImageView);
         weatherImageView = findViewById(R.id.weatherImageView);
         nearByPlacesImageView = findViewById(R.id.nearByPlacesImageView);
-        myMemoriesImageView = findViewById(R.id.myMemoriesImageView);
+        //myMemoriesImageView = findViewById(R.id.myMemoriesImageView);
         myTravelEventsTextView = findViewById(R.id.myTravelEventsTextView);
 
         addTravelEventTextView = findViewById(R.id.addTravelEventTextView);
@@ -70,13 +70,7 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
-        myProfileImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent travelEvent = new Intent(DashboardActivity.this, ProfileActivity.class);
-                startActivity(travelEvent);
-            }
-        });
+
 
 
         weatherImageView.setOnClickListener(new View.OnClickListener() {
@@ -97,13 +91,6 @@ public class DashboardActivity extends AppCompatActivity {
         });
 
 
-        myMemoriesImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent travelEvent = new Intent(DashboardActivity.this, ViewEventMemoriesActivity.class);
-                startActivity(travelEvent);
-            }
-        });
 
 
         myTravelEventsTextView.setOnClickListener(new View.OnClickListener() {

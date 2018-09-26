@@ -146,7 +146,6 @@
                     android:src="@drawable/dashboard_weather"
                     />
                 <TextView
-
                     android:id="@+id/weatherTextView"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
@@ -158,71 +157,6 @@
                     />
             </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:orientation="horizontal"
-            android:layout_marginBottom="15dp"
-            >
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="200dp"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:layout_margin="4dp"
-                android:background="#9AAABA"
-                android:id="@+id/settingsLayout"
-                >
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_gravity="center"
-                    android:padding="10dp"
-                    android:id="@+id/myMemoriesImageView"
-                    android:src="@drawable/dashboard_memories"
-                    />
-                <TextView
-
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="My Memories"
-                    android:layout_margin="5dp"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:id="@+id/myMemoriesTextView"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="200dp"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:layout_margin="4dp"
-                android:background="#F1C65E"
-                android:id="@+id/signInLayout"
-                >
-                <ImageView
-                    android:id="@+id/myProfileImageView"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:src="@drawable/dashboard_profile"
-                    android:layout_gravity="center"
-                    android:padding="10dp"
-                    />
-                <TextView
-
-                    android:id="@+id/myProfileTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="My Profile"
-                    android:layout_margin="5dp"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    />
-            </LinearLayout>
-        </LinearLayout>
     </LinearLayout>
 </ScrollView>
