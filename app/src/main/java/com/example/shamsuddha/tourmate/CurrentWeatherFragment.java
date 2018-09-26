@@ -44,14 +44,11 @@ public class CurrentWeatherFragment extends Fragment {
         ctemp1 = view.findViewById(R.id.ctemp);
         imageView = view.findViewById(R.id.tempim);
         city = view.findViewById(R.id.cityName);
-        humidity=view.findViewById(R.id.humidity);
-        details = view.findViewById(R.id.details);
+
+
         date = view.findViewById(R.id.dateTime);
-        minTemp=view.findViewById(R.id.tempMin);
-        maxTemp=view.findViewById(R.id.tempMax);
-        windspeed=view.findViewById(R.id.windSpeed);
-        winddeg=view.findViewById(R.id.windDeg);
-        windpres=view.findViewById(R.id.windPressure);
+
+
         tglBtn=view.findViewById(R.id.toggleButton);
         getCurrentWeather(url);
         return view;
@@ -69,14 +66,9 @@ public class CurrentWeatherFragment extends Fragment {
                 //Toast.makeText(getContext(), "" + weather.getMain().getTemp(), Toast.LENGTH_LONG).show();
 
                 if(weather!=null) {
-
                     ctemp1.setText(String.valueOf(weather.getMain().getTemp()) + "°" + units);
-                    maxTemp.setText("Max:" + String.valueOf(weather.getMain().getTempMax()).toString() + "°" + units);
-                    minTemp.setText("Min:" + String.valueOf(weather.getMain().getTempMin()).toString() + "°" + units);
-                    humidity.setText("Hum:" + String.valueOf(weather.getMain().getHumidity()).toString() + "%");
-                    windspeed.setText("Speed:" + String.valueOf(weather.getWind().getSpeed()).toString() + "km");
-                    winddeg.setText("Deg:" + String.valueOf(weather.getWind().getDeg()).toString() + "°");
-                    windpres.setText("Press:" + String.valueOf(weather.getMain().getPressure()).toString() + "hPa");
+
+
                     city.setText(weather.getName() + "," + weather.getSys().getCountry());
                     date.setText(dateformat(weather.getDt()).toString());
 
@@ -84,9 +76,8 @@ public class CurrentWeatherFragment extends Fragment {
                     for (Weather obj : weatherList) {
                         String icon = String.valueOf(obj.getIcon());
                         Picasso.get().load("http://openweathermap.org/img/w/" + icon + ".png").into(imageView);
-                        details.setText(String.valueOf(obj.getDescription()));
-                    }
 
+                    }
                 }else {
                     Toast.makeText(getActivity(), "Not Found", Toast.LENGTH_SHORT).show();
                 }
@@ -95,7 +86,8 @@ public class CurrentWeatherFragment extends Fragment {
 
             @Override
             public void onFailure(Call<CurrentWeather> call, Throwable t) {
-                Toast.makeText(getContext(), "" + t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Failed..Not Found", Toast.LENGTH_SHORT).show();
+
                 //Picasso.get().load("http://openweathermap.org/img/w/10d.png").into(imageView);
             }
 
