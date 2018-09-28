@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,17 +29,14 @@ public class EditTravelEventsActivity extends AppCompatActivity {
 
 
 
-        final String id = getIntent().getStringExtra("id");
-        int ids = Integer.parseInt(id);
+     int positionInt = getIntent().getExtras().getInt("position");
 
-        TravelEvent travelEvent = travelEventList.get(ids) ;
+        TravelEvent travelEvent = travelEventList.get(positionInt);
         String travelEventId = travelEvent.getId();
-
-
         travelDestinationsEditText.setText(travelEvent.getTravelDestination());
-        estimatedBudgetsEditText.setText(String.valueOf(travelEvent.getEstimatedBudget()));
-        fromDatesEditText.setText(String.valueOf(travelEvent.getFromDate()));
-        toDatesEditText.setText(String.valueOf(travelEvent.getToDate()));
+        estimatedBudgetsEditText.setText(travelEvent.getEstimatedBudget());
+        fromDatesEditText.setText(travelEvent.getFromDate());
+        toDatesEditText.setText(travelEvent.getToDate());
         updateTravelButton.setTag(travelEventId);
 
 

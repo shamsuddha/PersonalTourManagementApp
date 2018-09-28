@@ -15,7 +15,9 @@ import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -35,13 +37,13 @@ public class ViewTravelEventActivity extends AppCompatActivity {
     ListView mTravelEventListView;
     TravelEventAdapter travelEventAdapter;
     List<TravelEvent> travelEventList = new ArrayList<>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_travel_event);
         mTravelEventListView = findViewById(R.id.travelEventListView);
-
-          registerForContextMenu(mTravelEventListView);
 
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -65,6 +67,7 @@ public class ViewTravelEventActivity extends AppCompatActivity {
                 }
                 travelEventAdapter = new TravelEventAdapter(ViewTravelEventActivity.this, travelEventList);
                 mTravelEventListView.setAdapter(travelEventAdapter);
+
             }
 
             @Override
@@ -73,6 +76,8 @@ public class ViewTravelEventActivity extends AppCompatActivity {
             }
         });
 
+
+        registerForContextMenu(mTravelEventListView);
         mTravelEventListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
@@ -141,33 +146,57 @@ public class ViewTravelEventActivity extends AppCompatActivity {
     }
 
 
-    //------------------ Menu Section ------------------------------------
+//------------------ Menu Section ------------------------------------
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_after_login, menu);
+        getMenuInflater().inflate(R.menu.menu_after_login,menu);
         return super.onCreateOptionsMenu(menu);
     }
-
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         return super.onPrepareOptionsMenu(menu);
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        switch (id) {
+        switch (id)
+        {
             case R.id.action_home:
                 Intent home = new Intent(ViewTravelEventActivity.this, MainActivity.class);
                 startActivity(home);
                 break;
+
+
+            case R.id.action_add_travel_event:
+                Intent addTravelEvent = new Intent(ViewTravelEventActivity.this, AddTravelEventActivity.class);
+                startActivity(addTravelEvent);
+                break;
+            case R.id.action_view_travel_event:
+                Intent viewTravelEvent = new Intent(ViewTravelEventActivity.this, ViewTravelEventActivity.class);
+                startActivity(viewTravelEvent);
+                break;
+            case R.id.action_dashboard:
+                Intent dashboard = new Intent(ViewTravelEventActivity.this, DashboardActivity.class);
+                startActivity(dashboard);
+                break;
+            case R.id.action_profile:
+                Intent profile = new Intent(ViewTravelEventActivity.this, ProfileActivity.class);
+                startActivity(profile);
+                break;
+
+
+
+
             case R.id.action_logout:
                 firebaseAuth.signOut();
                 finish();
                 Intent signOut = new Intent(ViewTravelEventActivity.this, MainActivity.class);
                 startActivity(signOut);
                 break;
+
+
+
             default:
                 Toast.makeText(this, "Something Went ", Toast.LENGTH_SHORT).show();
         }
@@ -185,13 +214,68 @@ public class ViewTravelEventActivity extends AppCompatActivity {
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        int positions = info.position;
-        String empId = travelEventList.get(positions).getId();
+        int index = info.position;
+       // int positions = info.position;
+        String travelEventId = travelEventList.get(index).getId();
         // String empId = travelEventList.get(position).getId();
         switch (item.getItemId()){
             case R.id.edit:
-                startActivity(new Intent(ViewTravelEventActivity.this, EditTravelEventsActivity.class)
-                        .putExtra("id",empId));
+
+             /*   Intent hello = new Intent(ViewTravelEventActivity.this,EditTravelEventsActivity.class)
+                        .putExtra("position",index);
+                startActivity(hello);*/
+
+                Toast.makeText(this, "Edit",Toast.LENGTH_LONG).show();
+                break;
+
+            case R.id.delete:
+
+
+                TravelEvent travelEvent = travelEventList.get(index);
+
+                travelEventRef.child(travelEventId).removeValue()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(ViewTravelEventActivity.this, "Event deleted", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+
+
+                //Toast.makeText(this, "delete",Toast.LENGTH_LONG).show();
+                break;
+
+            case R.id.addExpense:
+
+                Intent hello = new Intent(ViewTravelEventActivity.this,AddTravelExpenseActivity.class)
+                        .putExtra("id",travelEventId);
+                startActivity(hello);
+
+                //Toast.makeText(this, "addExpense",Toast.LENGTH_LONG).show();
+                break;
+
+            case R.id.viewExpense:
+
+                Intent hellos = new Intent(ViewTravelEventActivity.this,ViewTravelExpenseActivity.class)
+                        .putExtra("id",travelEventId);
+                startActivity(hellos);
+                break;
+
+
+            case R.id.addMemories:
+                Intent helos = new Intent(ViewTravelEventActivity.this,AddEventMemoriesActivity.class)
+                        .putExtra("id",travelEventId);
+                startActivity(helos);
+
+                break;
+
+
+            case R.id.showMemories:
+
+                Intent helllos = new Intent(ViewTravelEventActivity.this,ViewEventMemoriesActivity.class)
+                        .putExtra("id",travelEventId);
+                startActivity(helllos);
                 break;
 
         }

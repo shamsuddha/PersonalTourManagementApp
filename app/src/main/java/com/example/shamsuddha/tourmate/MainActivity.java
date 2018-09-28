@@ -142,6 +142,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent home = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(home);
                 break;
+            case R.id.action_login:
+                Intent login = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(login);
+                break;
+            case R.id.action_register:
+                Intent register = new Intent(MainActivity.this, SignUpActivity.class);
+                startActivity(register);
+                break;
             default:
                 Toast.makeText(this, "Something Went ", Toast.LENGTH_SHORT).show();
         }

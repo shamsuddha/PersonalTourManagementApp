@@ -124,6 +124,27 @@ public class ViewTravelExpenseActivity extends AppCompatActivity {
                 startActivity(home);
                 break;
 
+
+            case R.id.action_add_travel_event:
+                Intent addTravelEvent = new Intent(ViewTravelExpenseActivity.this, AddTravelEventActivity.class);
+                startActivity(addTravelEvent);
+                break;
+            case R.id.action_view_travel_event:
+                Intent viewTravelEvent = new Intent(ViewTravelExpenseActivity.this, ViewTravelEventActivity.class);
+                startActivity(viewTravelEvent);
+                break;
+            case R.id.action_dashboard:
+                Intent dashboard = new Intent(ViewTravelExpenseActivity.this, DashboardActivity.class);
+                startActivity(dashboard);
+                break;
+            case R.id.action_profile:
+                Intent profile = new Intent(ViewTravelExpenseActivity.this, ProfileActivity.class);
+                startActivity(profile);
+                break;
+
+
+
+
             case R.id.action_logout:
                 firebaseAuth.signOut();
                 finish();

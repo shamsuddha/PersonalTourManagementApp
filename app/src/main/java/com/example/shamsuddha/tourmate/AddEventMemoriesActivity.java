@@ -335,6 +335,27 @@ public class AddEventMemoriesActivity extends AppCompatActivity {
                 startActivity(home);
                 break;
 
+
+            case R.id.action_add_travel_event:
+                Intent addTravelEvent = new Intent(AddEventMemoriesActivity.this, AddTravelEventActivity.class);
+                startActivity(addTravelEvent);
+                break;
+            case R.id.action_view_travel_event:
+                Intent viewTravelEvent = new Intent(AddEventMemoriesActivity.this, ViewTravelEventActivity.class);
+                startActivity(viewTravelEvent);
+                break;
+            case R.id.action_dashboard:
+                Intent dashboard = new Intent(AddEventMemoriesActivity.this, DashboardActivity.class);
+                startActivity(dashboard);
+                break;
+            case R.id.action_profile:
+                Intent profile = new Intent(AddEventMemoriesActivity.this, ProfileActivity.class);
+                startActivity(profile);
+                break;
+
+
+
+
             case R.id.action_logout:
                 firebaseAuth.signOut();
                 finish();

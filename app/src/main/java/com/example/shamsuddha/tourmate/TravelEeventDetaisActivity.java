@@ -141,6 +141,27 @@ public class TravelEeventDetaisActivity extends AppCompatActivity {
                 startActivity(home);
                 break;
 
+
+            case R.id.action_add_travel_event:
+                Intent addTravelEvent = new Intent(TravelEeventDetaisActivity.this, AddTravelEventActivity.class);
+                startActivity(addTravelEvent);
+                break;
+            case R.id.action_view_travel_event:
+                Intent viewTravelEvent = new Intent(TravelEeventDetaisActivity.this, ViewTravelEventActivity.class);
+                startActivity(viewTravelEvent);
+                break;
+            case R.id.action_dashboard:
+                Intent dashboard = new Intent(TravelEeventDetaisActivity.this, DashboardActivity.class);
+                startActivity(dashboard);
+                break;
+            case R.id.action_profile:
+                Intent profile = new Intent(TravelEeventDetaisActivity.this, ProfileActivity.class);
+                startActivity(profile);
+                break;
+
+
+
+
             case R.id.action_logout:
                 firebaseAuth.signOut();
                 finish();
@@ -156,6 +177,5 @@ public class TravelEeventDetaisActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     //------------------ Menu Section End --------------------------------
-
 
 }

@@ -113,6 +113,37 @@ public class ProfileActivity extends AppCompatActivity {
                 Intent home = new Intent(ProfileActivity.this, MainActivity.class);
                 startActivity(home);
                 break;
+
+
+            case R.id.action_add_travel_event:
+                Intent addTravelEvent = new Intent(ProfileActivity.this, AddTravelEventActivity.class);
+                startActivity(addTravelEvent);
+                break;
+            case R.id.action_view_travel_event:
+                Intent viewTravelEvent = new Intent(ProfileActivity.this, ViewTravelEventActivity.class);
+                startActivity(viewTravelEvent);
+                break;
+            case R.id.action_dashboard:
+                Intent dashboard = new Intent(ProfileActivity.this, DashboardActivity.class);
+                startActivity(dashboard);
+                break;
+            case R.id.action_profile:
+                Intent profile = new Intent(ProfileActivity.this, ProfileActivity.class);
+                startActivity(profile);
+                break;
+
+
+
+
+            case R.id.action_logout:
+                firebaseAuth.signOut();
+                finish();
+                Intent signOut = new Intent(ProfileActivity.this, MainActivity.class);
+                startActivity(signOut);
+                break;
+
+
+
             default:
                 Toast.makeText(this, "Something Went ", Toast.LENGTH_SHORT).show();
         }

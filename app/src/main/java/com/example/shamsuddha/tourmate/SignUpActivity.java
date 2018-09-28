@@ -125,6 +125,14 @@ public class SignUpActivity extends AppCompatActivity {
                 Intent home = new Intent(SignUpActivity.this, MainActivity.class);
                 startActivity(home);
                 break;
+            case R.id.action_login:
+                Intent login = new Intent(SignUpActivity.this, MainActivity.class);
+                startActivity(login);
+                break;
+            case R.id.action_register:
+                Intent register = new Intent(SignUpActivity.this, SignUpActivity.class);
+                startActivity(register);
+                break;
             default:
                 Toast.makeText(this, "Something Went ", Toast.LENGTH_SHORT).show();
         }

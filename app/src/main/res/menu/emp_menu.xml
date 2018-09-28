@@ -4,4 +4,13 @@
         android:id="@+id/edit"/>
     <item android:title="Delete"
         android:id="@+id/delete"/>
+
+    <item android:title="Add Expense"
+        android:id="@+id/addExpense"/>
+    <item android:title="View All Expense"
+        android:id="@+id/viewExpense"/>
+    <item android:title="Add Memories"
+        android:id="@+id/addMemories"/>
+    <item android:title="My Event Memories"
+        android:id="@+id/showMemories"/>
 </menu>
