@@ -1,6 +1,7 @@
 package com.example.shamsuddha.tourmate;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,8 +14,11 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -28,7 +32,6 @@ public class ProfileActivity extends AppCompatActivity {
     Button editProfile;
     FirebaseUser user;
     private StorageReference storageReference;
-
 
     private DatabaseReference roofRef, userRef, profileRef;
     @Override
@@ -46,12 +49,51 @@ public class ProfileActivity extends AppCompatActivity {
 
 
 
+
         mEditProfilePicTextView = findViewById(R.id.editProfilePicTextView);
         emailTextView = findViewById(R.id.emailTextView);
         contactNumberTextView = findViewById(R.id.contactNumberTextView);
         addressTextView = findViewById(R.id.addressTextView);
         profile_picture = findViewById(R.id.profile_picture);
         editProfile = findViewById(R.id.editProfile);
+
+
+
+
+
+        profileRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                Profile profile = dataSnapshot.getValue(Profile.class);
+
+                String name = profile.getName();
+                String contactNumber = profile.getContactNumber();
+                String address = profile.getAddress();
+
+
+                emailTextView.setText(name);
+                contactNumberTextView.setText(contactNumber);
+                addressTextView.setText(address);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+
+
+
+
+
+
+
 
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -73,7 +115,6 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-
         editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,7 +126,6 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
 
-        emailTextView.setText(firebaseAuth.getCurrentUser().getEmail());
 
 
 
@@ -114,7 +154,6 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(home);
                 break;
 
-
             case R.id.action_add_travel_event:
                 Intent addTravelEvent = new Intent(ProfileActivity.this, AddTravelEventActivity.class);
                 startActivity(addTravelEvent);
@@ -132,17 +171,12 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(profile);
                 break;
 
-
-
-
             case R.id.action_logout:
                 firebaseAuth.signOut();
                 finish();
                 Intent signOut = new Intent(ProfileActivity.this, MainActivity.class);
                 startActivity(signOut);
                 break;
-
-
 
             default:
                 Toast.makeText(this, "Something Went ", Toast.LENGTH_SHORT).show();

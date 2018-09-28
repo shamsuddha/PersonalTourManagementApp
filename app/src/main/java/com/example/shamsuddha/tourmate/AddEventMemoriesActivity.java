@@ -188,21 +188,20 @@ public class AddEventMemoriesActivity extends AppCompatActivity {
             byte[] data = baos.toByteArray();
 
 
-            // generate a random string
+          /*  // generate a random string
             String alphabet = "abcdefghijklmnopqrstuvwxyz";
             String s = "";
             Random random = new Random();
             int randomLen = 1 + random.nextInt(9);
             for (int i = 0; i < randomLen; i++) {
                 char c = alphabet.charAt(random.nextInt(26));
-                s += c;
+                s += c;*/
 
                 // end generating random string
 
-                String keId = travelEventRef.getKey();
-                StorageReference mountainsRef = storageReference.child("memories/").child(keId).child(s);
+              //  String keId = travelEventRef.getKey();
+                StorageReference mountainsRef = storageReference.child("images/");
                 UploadTask uploadTask = mountainsRef.putBytes(data);
-
                 uploadTask.addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception exception) {
@@ -241,11 +240,17 @@ public class AddEventMemoriesActivity extends AppCompatActivity {
                         Memories memories = new Memories(keyId,caption,url);
                         memoryRef.child(keyId).setValue(memories);
                         /// after checking transfer to a view travel event activity
-                        Intent i = new Intent(AddEventMemoriesActivity.this, ViewEventMemoriesActivity.class);
+                        Intent i = new Intent(AddEventMemoriesActivity.this, DashboardActivity.class);
                         startActivity(i);
+
+
 
                     }
                 });
+
+
+
+
 
 
             }
@@ -253,7 +258,7 @@ public class AddEventMemoriesActivity extends AppCompatActivity {
         }
 
 
-    }
+
 
 
 

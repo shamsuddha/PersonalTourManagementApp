@@ -46,11 +46,7 @@ public class EditProfileActivity extends AppCompatActivity {
         profileAddressEditText = findViewById(R.id.profileAddressEditText);
         profileNameEditText = findViewById(R.id.profileNameEditText);
 
-
-
         profileEmailEditText.setText(user.getEmail());
-
-
         updateProfileButton = findViewById(R.id.updateProfileButton);
         updateProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,13 +66,6 @@ public class EditProfileActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
-
-
 
 
     }
