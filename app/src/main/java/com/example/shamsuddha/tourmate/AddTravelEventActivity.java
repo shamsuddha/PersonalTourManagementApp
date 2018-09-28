@@ -62,15 +62,6 @@ public class AddTravelEventActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
         }
 
 

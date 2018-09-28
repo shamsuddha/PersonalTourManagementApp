@@ -41,7 +41,7 @@ public class ViewTravelEventActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_travel_event);
         mTravelEventListView = findViewById(R.id.travelEventListView);
 
-        //  registerForContextMenu(mTravelEventListView);
+          registerForContextMenu(mTravelEventListView);
 
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -86,7 +86,7 @@ public class ViewTravelEventActivity extends AppCompatActivity {
 
 
 
-        mTravelEventListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+    /*   mTravelEventListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long l) {
@@ -133,7 +133,7 @@ public class ViewTravelEventActivity extends AppCompatActivity {
 
                 return false;
             }
-        });
+        });*/
 
 
 
@@ -175,7 +175,28 @@ public class ViewTravelEventActivity extends AppCompatActivity {
     }
     //------------------ Menu Section End --------------------------------
 
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
 
+        getMenuInflater().inflate(R.menu.emp_menu,menu);
+        super.onCreateContextMenu(menu, v, menuInfo);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        int positions = info.position;
+        String empId = travelEventList.get(positions).getId();
+        // String empId = travelEventList.get(position).getId();
+        switch (item.getItemId()){
+            case R.id.edit:
+                startActivity(new Intent(ViewTravelEventActivity.this, EditTravelEventsActivity.class)
+                        .putExtra("id",empId));
+                break;
+
+        }
+        return super.onContextItemSelected(item);
+    }
 
 }
 

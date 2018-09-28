@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddTravelEventActivity">
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:background="@drawable/add_travel_event"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+            </LinearLayout>
+            <TextView
+                android:id="@+id/addTravelEventText"
+                android:textColor="#505050"
+                android:textSize="20sp"
+                android:paddingLeft="10dp"
+                android:text="Edit travel event.."
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.support.design.widget.TextInputLayout
+                android:layout_margin="15dp"
+                android:id="@+id/hshhh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <android.support.design.widget.TextInputEditText
+                    android:padding="5dp"
+                    android:textSize="20sp"
+                    android:id="@+id/travelDestinationsEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Travel Destination"
+                    android:inputType="text"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_margin="15dp"
+                android:id="@+id/hello"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <android.support.design.widget.TextInputEditText
+                    android:padding="5dp"
+                    android:textSize="20sp"
+                    android:id="@+id/estimatedBudgetsEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Estimated Budget"
+                    android:inputType="number"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_margin="15dp"
+                android:id="@+id/hhhh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <android.support.design.widget.TextInputEditText
+                    android:padding="5dp"
+                    android:textSize="20sp"
+                    android:id="@+id/fromDatesEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="From Date"
+                    android:inputType="date"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_margin="15dp"
+                android:id="@+id/hhh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <android.support.design.widget.TextInputEditText
+                    android:padding="5dp"
+                    android:textSize="20sp"
+                    android:id="@+id/toDatesEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="To Date"
+                    android:inputType="date"/>
+            </android.support.design.widget.TextInputLayout>
+            <Button
+                android:id="@+id/updateTravelButton"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:padding="10dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Update Travel Event"
+                android:background="#009900"
+                android:textColor="@android:color/white"
+                android:onClick="addTravelEvent"
+                />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
